@@ -12,7 +12,7 @@ namespace WordFixer.Console.Service
         public OpenAIService(string apiKey)
         {
             _apiKey = apiKey;
-            _httpClient = new HttpClient();
+            _httpClient = new HttpClient{ Timeout = TimeSpan.FromMinutes(5) };
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
         }
 
@@ -27,7 +27,7 @@ namespace WordFixer.Console.Service
                     model = "gpt-4", // ou "gpt-3.5-turbo
                     messages = new[]
                     {
-                        new { role = "system", content = @$"Você é um corretor de texto especializado em português. Corrija erros gramaticais, ortográficos e de concordância verbal. Não altere o estilo ou o significado do texto. Retorne no formato JSON e o novo texto deve estar sem quebra de linhas '\n': {{'TextoNovo': 'texto corrigido', 'PalavraComErro': 'palavra ou trecho com erro'}}." },
+                        new { role = "system", content = @$"Você é um corretor de texto especializado em português. Corrija erros gramaticais, ortográficos e de concordância verbal. Não altere o estilo ou o significado do texto. Retorne no formato JSON e o novo texto deve estar sem quebra de linhas '\n': {{'TextoNovo': 'texto corrigido', 'PalavraComErro': ''}}." },
                         new { role = "user", content = texto }
                     }
                 };
