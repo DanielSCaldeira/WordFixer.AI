@@ -1,0 +1,49 @@
+# Visual Studio
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+*.tlog
+*.wrn
+*.err
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.pdb
+*.mdb
+
+# Configuration files
+appsettings.json
+appsettings.*.json
+config.json
+
+# OS-specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Generated files
+Generated/
+GeneratedCode/
